@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Page for Website</title>
+    <!-- import css -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./optional/cart.css">
+
+    <!-- import google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- import icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Research Content Styles */
+        .research-content {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .research-content h1 {
+            color: var(--text-color);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .research-content h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        th,
+        td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--secondary-bg);
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        th h2 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        tr:hover {
+            background-color: rgba(200, 162, 124, 0.05);
+        }
+
+        /* Screenshot Styles */
+        .screenshot-section {
+            margin: 3rem 0;
+            text-align: center;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .screenshot-section h1 {
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .screenshot-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-section img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Analysis Section */
+        .analysis-section {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 3rem 0;
+        }
+
+        .analysis-section h2 {
+            color: var(--text-color);
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .analysis-section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .analysis-section ul {
+            list-style-type: none;
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .analysis-section li {
+            position: relative;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            color: #666;
+        }
+
+        .analysis-section li::before {
+            content: '•';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .research-content {
+                padding: 1rem;
+            }
+
+            .research-content h1 {
+                font-size: 2rem;
+            }
+
+            th,
+            td {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            .analysis-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .screenshot-section {
+                padding: 1rem;
+            }
+
+            .screenshot-section h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <!-- Top Row - Announcements -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="announcements">
+                    <div class="announcement-item">
+                        <i class="fas fa-truck-fast"></i>
+                        <span>Free Express Shipping Over $100</span>
+                    </div>
+                    <div class="announcement-item">
+                        <i class="fas fa-arrow-rotate-left"></i>
+                        <span>30 Days Easy Returns</span>
+                    </div>
+                    <div class="announcement-item">
+                        <i class="fas fa-tag"></i>
+                        <span>20% Off Your First Order</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Row - Main Header -->
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <h1>CHRONO<span>.</span></h1>
+                </div>
+
+                <div class="search-bar">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="What are you looking for?">
+                    <button type="submit">
+                        Search
+                    </button>
+                </div>
+
+                <div class="header-icons">
+                    <div class="icon-group">
+                        <a href="#profile" class="icon-btn" title="My Account">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <a href="#wishlist" class="icon-btn" title="Wishlist">
+                            <i class="fas fa-heart"></i>
+                        </a>
+                        <a href="#" class="icon-btn cart-icon" title="Shopping Cart">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Row - Navigation -->
+        <nav class="nav-menu">
+            <div class="container">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./product.html">Product</a></li>
+                    <li><a href="#collections">Blog</a></li>
+                    <li><a href="#bestsellers">Research</a></li>
+                    <li><a href="./about.html" class="active">About Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="research-content">
+                <h1>Research & Analysis</h1>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                <h2>Criteria</h2>
+                            </th>
+                            <th>
+                                <h2>Chrono24</h2>
+                            </th>
+                            <th>
+                                <h2>Titan</h2>
+                            </th>
+                            <th>
+                                <h2>Chrono</h2>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Visual Design</td>
+                            <td>Modern</td>
+                            <td>Flashy</td>
+                            <td>Simple and Classic</td>
+                        </tr>
+                        <tr>
+                            <td>Interface</td>
+                            <td>Simple</td>
+                            <td>Bold</td>
+                            <td>Simple and Easy</td>
+                        </tr>
+                        <tr>
+                            <td>Technologies Used</td>
+                            <td>HTML, ML, and React</td>
+                            <td>Vue.js and Laravel</td>
+                            <td>HTML, CSS, and JavaScript</td>
+                        </tr>
+                        <tr>
+                            <td>Navigation</td>
+                            <td>Simple and Easy</td>
+                            <td>Clear and Organized</td>
+                            <td>Simple and Organized</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="screenshot-section">
+                    <h1>Chrono24 Website Analysis</h1>
+                    <img src="./assets/Screenshot From 2025-01-29 11-31-47.png" alt="Screenshot of Chrono24 website">
+                </div>
+
+                <div class="screenshot-section">
+                    <h1>Titan Website Analysis</h1>
+                    <img src="./assets/Screenshot From 2025-01-29 11-34-01.png" alt="Screenshot of Titan website">
+                </div>
+
+                <div class="analysis-section">
+                    <h1>Detailed Website Analysis</h1>
+
+                    <h2>Chrono24:</h2>
+                    <p>
+                        Chrono24 stands out as a <span class="highlight">premier e-commerce platform</span> in the watch
+                        industry.
+                        The website's success can be attributed to its:
+                    <ul>
+                        <li>Clean and intuitive user interface</li>
+                        <li>Modern design aesthetics</li>
+                        <li>Efficient navigation system</li>
+                        <li>Comprehensive product categorization</li>
+                    </ul>
+                    </p>
+
+                    <h2>Titan:</h2>
+                    <p>
+                        Titan has established itself as <span class="highlight">India's leading watch retailer</span>,
+                        with a website that showcases:
+                    <ul>
+                        <li>Bold and contemporary design elements</li>
+                        <li>Seamless user experience</li>
+                        <li>Innovative product presentation</li>
+                        <li>Strategic content organization</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About Us</h3>
+                    <p>Discover our collection of premium timepieces crafted with precision and elegance.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#shop">Shop</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#terms">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@watchstore.com</p>
+                    <p>Phone: +1 234 567 890</p>
+                    <p>Address: 123 Watch Street, NY</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Watch Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="./optional/cart.js"></script>
+</body>
+
+</html>

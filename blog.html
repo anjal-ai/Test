@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHRONOS & CO.</title>
+    <!-- import css -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./optional/cart.css">
+
+    <!-- import google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- import icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Reset default styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .logo {
+            color: #4CAF50;
+
+        }
+
+        .header {
+            background-image: url(/fav1.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        main {
+            padding-top: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blog-posts {
+            display: flex;
+            flex-direction: column;
+            gap: 6vh;
+        }
+
+        .blog-post {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-post:hover {
+            transform: scale(1.02);
+        }
+
+        .featured-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 2px solid #eee;
+        }
+
+        .post-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .post-info h2 a {
+            font-size: 5rem;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .post-info h2 a:hover {
+            color: #4CAF50;
+        }
+
+        .post-info .author,
+        .post-info .date {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        .post-content {
+            padding: 1.5rem;
+            font-size: 1.2rem;
+            color: #555;
+            text-align: center;
+        }
+
+        .post-content .summary {
+            margin-bottom: 1.5rem;
+        }
+
+        .post-content a {
+            font-size: 1.1rem;
+            color: #4CAF50;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .post-content a:hover {
+            color: #333;
+        }
+
+        .related-articles {
+            padding: 1.5rem;
+            background-color: #f9f9f9;
+        }
+
+        .related-articles h3 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .related-articles ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .related-articles ul li {
+            margin-bottom: 1rem;
+        }
+
+        .related-articles ul li a {
+            font-size: 1rem;
+            color: #4CAF50;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .related-articles ul li a:hover {
+            color: #333;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2vh 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <!-- Top Row - Announcements -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="announcements">
+                    <div class="announcement-item">
+                        <i class="fas fa-truck-fast"></i>
+                        <span>Free Express Shipping Over $100</span>
+                    </div>
+                    <div class="announcement-item">
+                        <i class="fas fa-arrow-rotate-left"></i>
+                        <span>30 Days Easy Returns</span>
+                    </div>
+                    <div class="announcement-item">
+                        <i class="fas fa-tag"></i>
+                        <span>20% Off Your First Order</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Row - Main Header -->
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <h1>CHRONO<span>.</span></h1>
+                </div>
+
+                <div class="search-bar">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="What are you looking for?">
+                    <button type="submit">
+                        Search
+                    </button>
+                </div>
+
+                <div class="header-icons">
+                    <div class="icon-group">
+                        <a href="#profile" class="icon-btn" title="My Account">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <a href="#wishlist" class="icon-btn" title="Wishlist">
+                            <i class="fas fa-heart"></i>
+                        </a>
+                        <a href="#" class="icon-btn cart-icon" title="Shopping Cart">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Row - Navigation -->
+        <nav class="nav-menu">
+            <div class="container">
+                <ul>
+                    <li><a href="#new" class="active">Home</a></li>
+                    <li><a href="./product.html">Product</a></li>
+                    <li><a href="#collections">Blog</a></li>
+                    <li><a href="./research.html">Research</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <section class="blog-posts">
+                <!-- Article 1 -->
+                <article class="blog-post">
+                    <div class="post-info">
+                        <h2><a href="#">About Technology in Watchmaking</a></h2>
+                        <p class="author">Alexander Chrono</p>
+                        <p class="date">Published on January 15, 2025</p>
+                    </div>
+                    <div class="post-content">
+                        <p class="summary">
+                            <img src="./asset/image/fav1.jpg" alt="">
+                            Watchmaking is an age-old art that represent topnotch engineering into a concept of timeless
+                            design.One of the top features of Chronos & Co watches is their exceptional
+                            technology.Founded by a team of horology admirer, each of trhm brought their unique ideas to
+                            the table — from skilled watchmakers to visionary designers. Each piece goes through several
+                            stages of handcrafting, ensuring high-quality standards. chronos & co are interested in
+                            custom mades too.
+                            Technology/craftsmanship in Watchmaking:
+
+                            Swiss Movements: Utilizing only the finest Swiss movements, Chronos & Co guarantees
+                            precision in timekeeping.
+
+                            Materials: They use stainless steel, Titanium, sapphire crystal, and leather from
+                            sustainable sources, ensuring durability and luxury feel.
+
+                            Finishing Touches: From polished bezels to beautifully engraved case backs, every detail is
+                            thoughtfully designed.
+
+                            Technologies significantly makes sure to enhance the craftmanship on the watchmaking
+                            industry.Many new features are added on to the today's watches which is undoubtfully
+                            essential for human comfortness and make the daily survival easy. Technology also helps in
+                            the personalization and customization. Custom-made timepieces are set to be the symbol of
+                            luxury and are demanded among the well known personalities.Technologies linked with historic
+                            craft may create some of the dominationg timepieces the the watch industry..
+                        </p>
+                        <a href="#">Read more</a>
+                    </div>
+                    <div class="related-articles">
+                        <h3>Related Articles:</h3>
+                        <ul>
+                            <li><a href="#">How Technology Can Boost Sales in the Watch Industry</a></li>
+                            <li><a href="#">Positive Impact of Technology in the Watch Industry</a></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="blog-post">
+
+                    <div class="post-info">
+                        <h2><a href="#">How Technology Can Boost Sales in the Watch Industry</a></h2>
+                        <p class="author">Alexander Chrono </p>
+                        <p class="date">Published on January 15, 2025</p>
+                    </div>
+                    <div class="post-content">
+                        <img src="asset/image/messi.png" alt="">
+                        <p class="summary">
+                            In today’s fast-paced, tech-driven world, technology has become a game-changer for
+                            industries across the globe.
+
+                            1. E-Commerce Platforms and Global Reach: This era is e-commerce. every one is weel known
+                            about websites and social media. uploading on e-commerce websites like
+                            bigcommerce,shopify,wix
+                            might increase the sales of the product.
+                            The more reach the more cutomers and eye on the product. similaryly online business is in
+                            peak right now this it is the future:
+
+
+                            3. Social Media Marketing: social media beacme part of the business to promote the brands
+                            and products. positing in different social media platforms may grab the attention of the
+                            audiences about the products .In this generation human love to stay at home and shop.they
+                            can select their required product with just the help of internet.
+                        </p>
+                        <a href="#">Read more</a>
+                    </div>
+                    <div class="related-articles">
+                        <h3>Related Articles:</h3>
+                        <ul>
+                            <li><a href="#">About Technology in Watchmaking</a></li>
+                            <li><a href="#">How Technology Can Boost Watch Sales</a></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <div class="post-info">
+                    <h2><a href="#">Positive Impact of Technology in the Watch Industry</a></h2>
+                    <p class="author">Alexander Chrono </p>
+                    <p class="date">Published on January 15, 2025</p>
+                </div>
+                <div class="post-content">
+                    <img src="./asset/image/k2.png" alt="">
+                    <p class="summary">Precision and Accuracy: the new innovations in technology makes watch more
+                        accurate precise.watch brands/engineers are likely to take advantage of immerging technology to
+                        enhance the quality of their watches.Technology help to built some of the dominating timepieces
+                        in the watch industry.Exceptional craftting with the help of technology make watches more cool
+                        and demanding which is beneficial for any brand as well as their product
+
+                        Smartwatches Revolution: smartwatches are one of the best example of how technology helps watch
+                        brands to built their timeless. Features in smartwatch makes human life easy and comfortable.
+                        some key features includes heart rate,temperature,track fitness metrics.In addition it also
+                        provides notifications and reminders
+
+                        Customization and personalization: In today era cutom made watches are highlited as symbol of
+                        luxury/royality. it is all beacuse of exceptional engineering and topnotch technology.
+                        everybody wants custom made including vvs diamond or other gems materials. it enhances
+                        personality.
+
+                        Today's watches include some of the significant features on the watches which ios fruitful to
+                        humans. Smart watches come equipped with sensors that can track various aspects of humans
+                        physical acotivies.Smart watches are not only about timer . It have became more the that. it
+                        have become essential product for any of us due to its new features which is worth wearing.
+                        Talikng more about positive impact their are numerous positive sides of technologies on watch
+                        industry.
+                        \From smart watches to custom-made according to one's personalization.
+                    </p>
+                    <a href="#">Read more</a>
+                </div>
+                <div class="related-articles">
+                    <h3>Related Articles:</h3>
+                    <ul>
+                        <li><a href="#">Negative Impact of Technology in the Watch Industry
+                            </a></li>
+                        <li><a href="#">Overall Conclusion on Technology in the Watch Industry</a></li>
+
+                        <div class="post-info">
+                            <h2><a href="#">Negative Impact of Technology in the Watch Industry</a></h2>
+                            <p class="author">Alexander Chrono </p>
+                            <p class="date">Published on January 15, 2025</p>
+                        </div>
+                        <div class="post-content">
+                            <img src="./asset/image/f2.jpg" alt="">
+                            <p class="summary">1. Destruction of Traditional Craftsmanship
+                                The rise of traditional watches are over due to technologies. tradiotional watches are
+                                estimated at low price because everybody wants smart and luxury watches . ancient craft
+                                will demise soon in watch industry beacuse of new innovations.
+
+
+                                . Environmental Concerns
+                                While technology has driven sustainability in some areas, it has also created new
+                                challenges:
+
+                                Electronic Waste: The rapid manufacture of smartwatches and digital devices contributes
+                                to huge e-waste which will diractly effect to environmen.manyn more watches requires no
+                                biodegradable materials which are not environment friendly. this is one of the major
+                                drawback.
+
+                            </p>
+                            <a href="#">Read more</a>
+                        </div>
+
+
+                        <ul>
+
+                            <div class="post-info">
+                                <h2><a href="#">How Technology Can Boost Sales in the Watch Industry</a></h2>
+                                <p class="author">Alexander Chrono </p>
+                                <p class="date">Published on January 15, 2025</p>
+                            </div>
+                            <div class="post-content">
+                                <img src="./asset/image/t2.jpg" alt="">
+                                <p class="summary">In today’s fast-paced, tech-driven world, technology has become a
+                                    game-changer for industries across the globe.
+
+                                    1. E-Commerce Platforms and Global Reach: This era is e-commerce. every one is weel
+                                    known about websites and social media. uploading on e-commerce websites like
+                                    bigcommerce,shopify,wix
+                                    might increase the sales of the product.
+                                    The more reach the more cutomers and eye on the product. similaryly online business
+                                    is in peak right now this it is the future:
+
+
+                                    3. Social Media Marketing: social media beacme part of the business to promote the
+                                    brands and products. positing in different social media platforms may grab the
+                                    attention of the audiences about the products .In this generation human love to stay
+                                    at home and shop.they can select their required product with just the help of
+                                    internet.
+
+                                </p>
+                                <a href="#">"At Chronos & Co., we don't just measure time – we define it."</a>
+                            </div>
+
+
+                            <ul>
+                                <!-- Additional articles can be added in a similar structure -->
+
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About Us</h3>
+                    <p>Discover our collection of premium timepieces crafted with precision and elegance.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#shop">Shop</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#terms">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@watchstore.com</p>
+                    <p>Phone: +1 234 567 890</p>
+                    <p>Address: 123 Watch Street, NY</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Watch Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./optional/cart.js"></script>
+</body>
+
+</html>
