@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHRONOS & CO.</title>
+    <title>Blog - CHRONO</title>
     <!-- import css -->
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./optional/cart.css">
@@ -56,82 +56,104 @@
         .blog-posts {
             display: flex;
             flex-direction: column;
-            gap: 6vh;
+            gap: 3rem;
+            padding: 2rem 0;
         }
 
         .blog-post {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             overflow: hidden;
             transition: transform 0.3s ease;
+            border: 1px solid var(--border-color);
         }
 
         .blog-post:hover {
-            transform: scale(1.02);
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
         }
 
         .featured-image {
             width: 100%;
             height: auto;
             display: block;
-            border-bottom: 2px solid #eee;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .post-info {
-            padding: 1.5rem;
+            padding: 2rem;
             text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .post-info h2 {
+            margin-bottom: 1rem;
         }
 
         .post-info h2 a {
-            font-size: 5rem;
-            color: #333;
+            font-size: 2rem;
+            color: var(--text-color);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             transition: color 0.3s;
         }
 
         .post-info h2 a:hover {
-            color: #4CAF50;
+            color: var(--accent-color);
         }
 
         .post-info .author,
         .post-info .date {
-            font-size: 1rem;
-            color: #777;
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0.5rem 0;
         }
 
         .post-content {
-            padding: 1.5rem;
-            font-size: 1.2rem;
-            color: #555;
-            text-align: center;
+            padding: 2rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .post-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 1rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .post-content .summary {
-            margin-bottom: 1.5rem;
+            margin: 1.5rem 0;
         }
 
         .post-content a {
-            font-size: 1.1rem;
-            color: #4CAF50;
+            display: inline-block;
+            color: var(--accent-color);
             text-decoration: none;
+            font-weight: 500;
             transition: color 0.3s;
+            margin-top: 1rem;
         }
 
         .post-content a:hover {
-            color: #333;
+            color: var(--secondary-bg);
         }
 
         .related-articles {
-            padding: 1.5rem;
-            background-color: #f9f9f9;
+            padding: 2rem;
+            background-color: var(--primary-bg);
+            border-top: 1px solid var(--border-color);
         }
 
         .related-articles h3 {
             font-size: 1.2rem;
-            color: #333;
+            color: var(--text-color);
             margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
         }
 
         .related-articles ul {
@@ -140,18 +162,40 @@
         }
 
         .related-articles ul li {
-            margin-bottom: 1rem;
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .related-articles ul li::before {
+            content: '•';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
         }
 
         .related-articles ul li a {
-            font-size: 1rem;
-            color: #4CAF50;
+            color: #666;
             text-decoration: none;
             transition: color 0.3s;
         }
 
         .related-articles ul li a:hover {
-            color: #333;
+            color: var(--accent-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .post-info h2 a {
+                font-size: 1.5rem;
+            }
+
+            .post-info,
+            .post-content,
+            .related-articles {
+                padding: 1.5rem;
+            }
         }
 
         footer {
@@ -245,31 +289,18 @@
                         <p class="date">Published on January 15, 2025</p>
                     </div>
                     <div class="post-content">
+                        <img src="./assets/fav1.jpg" alt="Technology in Watchmaking">
                         <p class="summary">
-                            <img src="./asset/image/fav1.jpg" alt="">
-                            Watchmaking is an age-old art that represent topnotch engineering into a concept of timeless
-                            design.One of the top features of Chronos & Co watches is their exceptional
-                            technology.Founded by a team of horology admirer, each of trhm brought their unique ideas to
-                            the table — from skilled watchmakers to visionary designers. Each piece goes through several
-                            stages of handcrafting, ensuring high-quality standards. chronos & co are interested in
-                            custom mades too.
+                            Watchmaking is an age-old art that represents topnotch engineering into a concept of timeless design. One of the top features of Chronos & Co watches is their exceptional technology. Founded by a team of horology admirers, each of them brought their unique ideas to the table — from skilled watchmakers to visionary designers. Each piece goes through several stages of handcrafting, ensuring high-quality standards. chronos & co are interested in custom mades too.
                             Technology/craftsmanship in Watchmaking:
 
-                            Swiss Movements: Utilizing only the finest Swiss movements, Chronos & Co guarantees
-                            precision in timekeeping.
+                            Swiss Movements: Utilizing only the finest Swiss movements, Chronos & Co guarantees precision in timekeeping.
 
-                            Materials: They use stainless steel, Titanium, sapphire crystal, and leather from
-                            sustainable sources, ensuring durability and luxury feel.
+                            Materials: They use stainless steel, Titanium, sapphire crystal, and leather from sustainable sources, ensuring durability and luxury feel.
 
-                            Finishing Touches: From polished bezels to beautifully engraved case backs, every detail is
-                            thoughtfully designed.
+                            Finishing Touches: From polished bezels to beautifully engraved case backs, every detail is thoughtfully designed.
 
-                            Technologies significantly makes sure to enhance the craftmanship on the watchmaking
-                            industry.Many new features are added on to the today's watches which is undoubtfully
-                            essential for human comfortness and make the daily survival easy. Technology also helps in
-                            the personalization and customization. Custom-made timepieces are set to be the symbol of
-                            luxury and are demanded among the well known personalities.Technologies linked with historic
-                            craft may create some of the dominationg timepieces the the watch industry..
+                            Technologies significantly makes sure to enhance the craftmanship on the watchmaking industry.Many new features are added on to the today's watches which is undoubtfully essential for human comfortness and make the daily survival easy. Technology also helps in the personalization and customization. Custom-made timepieces are set to be the symbol of luxury and are demanded among the well known personalities.Technologies linked with historic craft may create some of the dominationg timepieces the the watch industry..
                         </p>
                         <a href="#">Read more</a>
                     </div>
@@ -284,143 +315,90 @@
 
                 <!-- Article 2 -->
                 <article class="blog-post">
-
                     <div class="post-info">
-                        <h2><a href="#">How Technology Can Boost Sales in the Watch Industry</a></h2>
-                        <p class="author">Alexander Chrono </p>
+                        <h2><a href="#">Positive Impact of Technology in the Watch Industry</a></h2>
+                        <p class="author">Alexander Chrono</p>
                         <p class="date">Published on January 15, 2025</p>
                     </div>
                     <div class="post-content">
-                        <img src="asset/image/messi.png" alt="">
+                        <img src="./assets/k2.png" alt="Positive Impact of Technology">
                         <p class="summary">
-                            In today’s fast-paced, tech-driven world, technology has become a game-changer for
-                            industries across the globe.
+                            Precision and Accuracy: The new innovations in technology makes watch more accurate and precise. Watch brands/engineers are likely to take advantage of emerging technology to enhance the quality of their watches.Technology help to built some of the dominating timepieces in the watch industry.Exceptional craftting with the help of technology make watches more cool and demanding which is beneficial for any brand as well as their product
 
-                            1. E-Commerce Platforms and Global Reach: This era is e-commerce. every one is weel known
-                            about websites and social media. uploading on e-commerce websites like
-                            bigcommerce,shopify,wix
-                            might increase the sales of the product.
-                            The more reach the more cutomers and eye on the product. similaryly online business is in
-                            peak right now this it is the future:
+                            Smartwatches Revolution: smartwatches are one of the best example of how technology helps watch brands to built their timeless. Features in smartwatch makes human life easy and comfortable. some key features includes heart rate,temperature,track fitness metrics.In addition it also provides notifications and reminders
 
+                            Customization and personalization: In today era cutom made watches are highlited as symbol of luxury/royality. it is all beacuse of exceptional engineering and topnotch technology. everybody wants custom made including vvs diamond or other gems materials. it enhances personality.
 
-                            3. Social Media Marketing: social media beacme part of the business to promote the brands
-                            and products. positing in different social media platforms may grab the attention of the
-                            audiences about the products .In this generation human love to stay at home and shop.they
-                            can select their required product with just the help of internet.
+                            Today's watches include some of the significant features on the watches which ios fruitful to humans. Smart watches come equipped with sensors that can track various aspects of humans physical acotivies.Smart watches are not only about timer . It have became more the that. it have become essential product for any of us due to its new features which is worth wearing. Talikng more about positive impact their are numerous positive sides of technologies on watch industry.
+                            \From smart watches to custom-made according to one's personalization.
                         </p>
                         <a href="#">Read more</a>
                     </div>
                     <div class="related-articles">
                         <h3>Related Articles:</h3>
                         <ul>
-                            <li><a href="#">About Technology in Watchmaking</a></li>
-                            <li><a href="#">How Technology Can Boost Watch Sales</a></li>
+                            <li><a href="#">Negative Impact of Technology in the Watch Industry</a></li>
+                            <li><a href="#">Overall Conclusion on Technology in the Watch Industry</a></li>
                         </ul>
                     </div>
                 </article>
 
-                <div class="post-info">
-                    <h2><a href="#">Positive Impact of Technology in the Watch Industry</a></h2>
-                    <p class="author">Alexander Chrono </p>
-                    <p class="date">Published on January 15, 2025</p>
-                </div>
-                <div class="post-content">
-                    <img src="./asset/image/k2.png" alt="">
-                    <p class="summary">Precision and Accuracy: the new innovations in technology makes watch more
-                        accurate precise.watch brands/engineers are likely to take advantage of immerging technology to
-                        enhance the quality of their watches.Technology help to built some of the dominating timepieces
-                        in the watch industry.Exceptional craftting with the help of technology make watches more cool
-                        and demanding which is beneficial for any brand as well as their product
+                <!-- Article 3 -->
+                <article class="blog-post">
+                    <div class="post-info">
+                        <h2><a href="#">Negative Impact of Technology in the Watch Industry</a></h2>
+                        <p class="author">Alexander Chrono</p>
+                        <p class="date">Published on January 15, 2025</p>
+                    </div>
+                    <div class="post-content">
+                        <img src="./assets/f2.jpg" alt="Negative Impact of Technology">
+                        <p class="summary">
+                            1. Destruction of Traditional Craftsmanship
+                            The rise of traditional watches are over due to technologies. Traditional watches are estimated at low price because everybody wants smart and luxury watches. Ancient craft will demise soon in watch industry because of new innovations.
 
-                        Smartwatches Revolution: smartwatches are one of the best example of how technology helps watch
-                        brands to built their timeless. Features in smartwatch makes human life easy and comfortable.
-                        some key features includes heart rate,temperature,track fitness metrics.In addition it also
-                        provides notifications and reminders
+                            . Environmental Concerns
+                            While technology has driven sustainability in some areas, it has also created new challenges:
 
-                        Customization and personalization: In today era cutom made watches are highlited as symbol of
-                        luxury/royality. it is all beacuse of exceptional engineering and topnotch technology.
-                        everybody wants custom made including vvs diamond or other gems materials. it enhances
-                        personality.
-
-                        Today's watches include some of the significant features on the watches which ios fruitful to
-                        humans. Smart watches come equipped with sensors that can track various aspects of humans
-                        physical acotivies.Smart watches are not only about timer . It have became more the that. it
-                        have become essential product for any of us due to its new features which is worth wearing.
-                        Talikng more about positive impact their are numerous positive sides of technologies on watch
-                        industry.
-                        \From smart watches to custom-made according to one's personalization.
-                    </p>
-                    <a href="#">Read more</a>
-                </div>
-                <div class="related-articles">
-                    <h3>Related Articles:</h3>
-                    <ul>
-                        <li><a href="#">Negative Impact of Technology in the Watch Industry
-                            </a></li>
-                        <li><a href="#">Overall Conclusion on Technology in the Watch Industry</a></li>
-
-                        <div class="post-info">
-                            <h2><a href="#">Negative Impact of Technology in the Watch Industry</a></h2>
-                            <p class="author">Alexander Chrono </p>
-                            <p class="date">Published on January 15, 2025</p>
-                        </div>
-                        <div class="post-content">
-                            <img src="./asset/image/f2.jpg" alt="">
-                            <p class="summary">1. Destruction of Traditional Craftsmanship
-                                The rise of traditional watches are over due to technologies. tradiotional watches are
-                                estimated at low price because everybody wants smart and luxury watches . ancient craft
-                                will demise soon in watch industry beacuse of new innovations.
-
-
-                                . Environmental Concerns
-                                While technology has driven sustainability in some areas, it has also created new
-                                challenges:
-
-                                Electronic Waste: The rapid manufacture of smartwatches and digital devices contributes
-                                to huge e-waste which will diractly effect to environmen.manyn more watches requires no
-                                biodegradable materials which are not environment friendly. this is one of the major
-                                drawback.
-
-                            </p>
-                            <a href="#">Read more</a>
-                        </div>
-
-
+                            Electronic Waste: The rapid manufacture of smartwatches and digital devices contributes to huge e-waste which will diractly effect to environmen.manyn more watches requires no biodegradable materials which are not environment friendly. this is one of the major drawback.
+                        </p>
+                        <a href="#">Read more</a>
+                    </div>
+                    <div class="related-articles">
+                        <h3>Related Articles:</h3>
                         <ul>
+                            <li><a href="#">Positive Impact of Technology in the Watch Industry</a></li>
+                            <li><a href="#">Future of Traditional Watchmaking</a></li>
+                        </ul>
+                    </div>
+                </article>
 
-                            <div class="post-info">
-                                <h2><a href="#">How Technology Can Boost Sales in the Watch Industry</a></h2>
-                                <p class="author">Alexander Chrono </p>
-                                <p class="date">Published on January 15, 2025</p>
-                            </div>
-                            <div class="post-content">
-                                <img src="./asset/image/t2.jpg" alt="">
-                                <p class="summary">In today’s fast-paced, tech-driven world, technology has become a
-                                    game-changer for industries across the globe.
+                <!-- Article 4 -->
+                <article class="blog-post">
+                    <div class="post-info">
+                        <h2><a href="#">How Technology Can Boost Sales in the Watch Industry</a></h2>
+                        <p class="author">Alexander Chrono</p>
+                        <p class="date">Published on January 15, 2025</p>
+                    </div>
+                    <div class="post-content">
+                        <img src="./assets/messi.png" alt="Technology and Sales">
+                        <p class="summary">
+                            In today's fast-paced, tech-driven world, technology has become a game-changer for industries across the globe.
 
-                                    1. E-Commerce Platforms and Global Reach: This era is e-commerce. every one is weel
-                                    known about websites and social media. uploading on e-commerce websites like
-                                    bigcommerce,shopify,wix
-                                    might increase the sales of the product.
-                                    The more reach the more cutomers and eye on the product. similaryly online business
-                                    is in peak right now this it is the future:
+                            1. E-Commerce Platforms and Global Reach: This era is e-commerce. every one is weel known about websites and social media. uploading on e-commerce websites like bigcommerce,shopify,wix might increase the sales of the product.
+                            The more reach the more cutomers and eye on the product. similaryly online business is in peak right now this it is the future:
 
-
-                                    3. Social Media Marketing: social media beacme part of the business to promote the
-                                    brands and products. positing in different social media platforms may grab the
-                                    attention of the audiences about the products .In this generation human love to stay
-                                    at home and shop.they can select their required product with just the help of
-                                    internet.
-
-                                </p>
-                                <a href="#">"At Chronos & Co., we don't just measure time – we define it."</a>
-                            </div>
-
-
-                            <ul>
-                                <!-- Additional articles can be added in a similar structure -->
-
+                            3. Social Media Marketing: social media beacme part of the business to promote the brands and products. positing in different social media platforms may grab the attention of the audiences about the products .In this generation human love to stay at home and shop.they can select their required product with just the help of internet.
+                        </p>
+                        <a href="#">"At Chronos & Co., we don't just measure time – we define it."</a>
+                    </div>
+                    <div class="related-articles">
+                        <h3>Related Articles:</h3>
+                        <ul>
+                            <li><a href="#">Digital Marketing in Watch Industry</a></li>
+                            <li><a href="#">E-commerce Strategies for Watch Brands</a></li>
+                        </ul>
+                    </div>
+                </article>
             </section>
         </div>
     </main>
@@ -444,9 +422,9 @@
                 </div>
                 <div class="footer-col">
                     <h3>Contact Us</h3>
-                    <p>Email: info@watchstore.com</p>
-                    <p>Phone: +1 234 567 890</p>
-                    <p>Address: 123 Watch Street, NY</p>
+                    <p>Email: chrono@gmail.com</p>
+                    <p>Phone: +9843333333</p>
+                    <p>Address: Sundarharicha-04, Morang</p>
                 </div>
                 <div class="footer-col">
                     <h3>Follow Us</h3>
