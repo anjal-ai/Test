@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Aspiring Machine Learning Specialist</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      color: #333;
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #34495e;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .skill {
+      background: #3498db;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .skill:hover {
+      transform: scale(1.1);
+      background: #2980b9;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #e74c3c;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.3s ease, transform 0.3s ease;
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    .cta-button:hover {
+      background: #c0392b;
+      transform: translateY(-5px);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #7f8c8d;
+    }
+
+    footer a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hi, I'm [Your Name]</h1>
+    <h2>An IT Student at Itahari International College (IIC)</h2>
+    <p>I am a passionate self-learner in artificial intelligence and machine learning, focused on developing skills that solve real-world problems through data-driven insights. My expertise includes Python and its powerful libraries—NumPy, Pandas, Matplotlib, and PyPlot—used for building machine learning models and conducting data analysis.</p>
+    <p>I’m really interested in using math to solve real-world problems and learning how AI and machine learning can improve processes and drive innovation. As I work towards becoming an Applied Machine Learning Specialist, I’m looking forward to collaborating with others, learning new skills, and contributing to projects that make a difference.</p>
+
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">Python</div>
+      <div class="skill">NumPy</div>
+      <div class="skill">Pandas</div>
+      <div class="skill">Matplotlib</div>
+      <div class="skill">Machine Learning</div>
+      <div class="skill">Data Analysis</div>
+    </div>
+
+    <a href="#contact" class="cta-button">Let's Connect!</a>
+
+    <footer>
+      Let’s explore the future of AI together! | 
+      <a href="mailto:your-email@example.com">Email Me</a> | 
+      <a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
+    </footer>
+  </div>
+</body>
+</html>
